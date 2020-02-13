@@ -1,9 +1,9 @@
 # Dev instructions for the image carousel component.
-npm install - for dependencies
-npm run build -  for webpack to bundle
-Must have MongoDB installed and running
-npm run seed - to seed the DB
-npm start - to run server
+1. npm install - for dependencies
+2. npm run build -  for webpack to bundle
+3. Must have MongoDB installed and running
+4. npm run seed - to seed the DB
+5. npm start - to run server
 
 
 ## Available API Routes
