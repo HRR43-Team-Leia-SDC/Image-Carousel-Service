@@ -27,8 +27,13 @@ app.get('/carousel/:id', (req, res, next) => {
 //write a post route
 app.post('/carousel', (req, res) => {
   //pass req.body to a function that writes to the DB
-  const newImage = new Images(req.body);
-  newImage.save((err, result) => {
+  const newImages = [];
+  for (var i = 0; i < req.body.length; i++) {
+    const newImage = new Images(req.body[i]);
+    newImages.push(newImage);
+  }
+  console.log(newImages);
+  Images.insertMany(newImages, (err, result) => {
     if (err) {
       console.log('error get request', err);
       res.sendStatus(404);
