@@ -8,11 +8,11 @@ npm start - to run server
 
 ## Available API Routes
 
-| Endpoint           | Type   | Operation                   |
-|--------------------|--------|-----------------------------|
-| `/carousel/:refId` | GET    | Get image with refId        |
-| `/carousel/`       | POST   | Add array of images         |
-| `/carousel/:refId` | PUT    | update image with refId     |
-| `/carousel/:refId` | DELETE | delete image with refId     |
-|--------------------|--------|-----------------------------|
+| Endpoint               | Type   | Operation                   |
+|------------------------|--------|-----------------------------|
+| `/api/carousel/:refId` | GET    | Get image with refId        |
+| `/api/carousel/`       | POST   | Add array of images         |
+| `/api/carousel/:refId` | PUT    | update image with refId     |
+| `/api/carousel/:refId` | DELETE | delete image with refId     |
+|------------------------|--------|-----------------------------|
 refID - `_id` created by mongoDB for each image
