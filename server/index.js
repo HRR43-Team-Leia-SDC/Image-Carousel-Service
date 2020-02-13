@@ -25,8 +25,8 @@ app.get('/carousel/:id', (req, res, next) => {
 });
 
 //write a post route
-app.post('/carousel', (req, res) => {
-  //pass req.body to a function that writes to the DB
+app.post('/api/carousel', (req, res) => {
+  //pass array to a function that writes to the DB
   const newImages = [];
   for (var i = 0; i < req.body.length; i++) {
     const newImage = new Images(req.body[i]);
@@ -43,8 +43,22 @@ app.post('/carousel', (req, res) => {
   })
 });
 
+// //write a get route
+app.get('/api/carousel/:refId', (req, res) => {
+  //pass refId to a function that finds the entry with refId in the DB
+  let refId = req.params.refId;
+  Images.find({ _id: refId }, (err, result) => {
+    if (err) {
+      console.log('error get request', err);
+      res.sendStatus(404);
+    } else {
+      res.json(result);
+    };
+  })
+})
+
 // //write a put route
-app.put('/carousel/:refId', (req, res) => {
+app.put('/api/carousel/:refId', (req, res) => {
   //pass req.body to a function that updates the entry at refId in the DB
   let refId = req.params.refId;
   Images.updateOne({ _id: refId }, req.body, (err, result) => {
@@ -58,7 +72,7 @@ app.put('/carousel/:refId', (req, res) => {
 });
 
 // //write a delete route
-app.delete('/carousel/:refId', (req, res) => {
+app.delete('/api/carousel/:refId', (req, res) => {
   //pass refId to a function that deletes the entry with refId in the DB
   let refId = req.params.refId;
   Images.deleteOne({ _id: refId }, (err, result) => {
