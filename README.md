@@ -10,10 +10,9 @@ npm start - to run server
 
 | Endpoint           | Type   | Operation                   |
 |--------------------|--------|-----------------------------|
-| `/carousel/:id`    | GET    | Get all images for a id     |
-| `/carousel/:refId` | POST   | Add image with refId        |
+| `/carousel/:refId` | GET    | Get image with refId        |
+| `/carousel/`       | POST   | Add array of images         |
 | `/carousel/:refId` | PUT    | update image with refId     |
 | `/carousel/:refId` | DELETE | delete image with refId     |
 |--------------------|--------|-----------------------------|
-id - The id of the page to be loaded
 refID - `_id` created by mongoDB for each image
