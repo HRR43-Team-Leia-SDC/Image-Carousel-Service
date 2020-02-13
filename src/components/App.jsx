@@ -74,7 +74,7 @@ class App extends React.Component {
     .then(res => {
       let images = res.data.map(item => item.url);
       this.setState({images}, () => {
-        console.log(images);
+        // console.log(images);
       });
     })
     .catch(err => {
