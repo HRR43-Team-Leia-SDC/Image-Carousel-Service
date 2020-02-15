@@ -14,5 +14,5 @@
 | `/api/carousel/`       | POST   | Add array of images         |
 | `/api/carousel/:refId` | PUT    | update image with refId     |
 | `/api/carousel/:refId` | DELETE | delete image with refId     |
-|------------------------|--------|-----------------------------|
+
 refID - `_id` created by mongoDB for each image
