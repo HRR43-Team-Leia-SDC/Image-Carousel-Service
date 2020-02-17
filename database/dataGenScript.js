@@ -36,4 +36,3 @@ function writeIt(totalRecs, writer, encoding, callback) {
 }
 writeIt(100000000, dataGen, 'utf-8', () => {dataGen.end()});
 
-// dataGen.end();

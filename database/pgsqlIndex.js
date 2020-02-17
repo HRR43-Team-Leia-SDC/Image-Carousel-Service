@@ -1,1 +1,7 @@
-//use this file for setting up connection to postgres DB
+const { Client } = require('pg'); //switch from client to pool as an optimization later.
+
+const client = new Client({
+  database: 'images',
+  user: 'danmoy',
+  password: '',
+});
