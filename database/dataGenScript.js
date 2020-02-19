@@ -15,7 +15,7 @@ function writeIt(totalRecs, writer, encoding, callback) {
       let id = Math.floor(Math.random() * 10000000);
       let image = `https://image-carousel.s3-us-west-1.amazonaws.com/${randoImgNum}.jpg`;
 
-      let data = `${_id},${id},${image}\n`
+      let data = `${id},${_id},${image}\n`
 
       if (i === 0) {
         // Last time!
