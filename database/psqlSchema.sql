@@ -9,3 +9,5 @@ CREATE TABLE images (
   _id SERIAL PRIMARY KEY,
   url VARCHAR(200) NOT NULL
 );
+
+CREATE INDEX ON images (id);
