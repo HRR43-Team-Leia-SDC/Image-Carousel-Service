@@ -1,19 +1,21 @@
-const mongoose = require('mongoose');
-require('dotenv').config();
-mongoose.connect(process.env.DATABASE || 'mongodb://localhost/carousel', { useNewUrlParser: true, useUnifiedTopology: true  });
-const Schema = mongoose.Schema;
-const db = mongoose.connection;
+const { Client } = require('pg'); //switch from client to pool as an optimization later.
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log("mongodb connected!");
+const client = new Client({
+  database: 'images',
+  user: 'danmoy',
+  password: '',
 });
 
-const ImageSchema = new Schema({
-  id: Number,
-  url: String
-});
+client.connect();
 
-const Images = mongoose.model('Images', ImageSchema);
-
-module.exports = Images;
+module.exports.getImages = function(id, callback) {
+  const query = 'SELECT url from images WHERE id=$1';
+  const value = [id];
+  client.query(query, value, (err, res) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, res.rows)
+    }
+  })
+}
