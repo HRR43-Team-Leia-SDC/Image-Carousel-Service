@@ -8,6 +8,7 @@
     "build": "webpack",
     "start": "nodemon server",
     "seed": "node database/seed.js",
+    "seedPsql": "node database/seedPsql.js",
     "dataGen": "node database/dataGenScript.js"
   },
   "repository": {
@@ -28,11 +29,13 @@
     "axios": "^0.19.2",
     "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
+    "cassandra-driver": "^4.4.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.8.9",
     "mongoose-type-url": "^1.0.6",
     "nodemon": "^2.0.2",
+    "pg": "^7.18.1",
     "puppeteer": "^2.1.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

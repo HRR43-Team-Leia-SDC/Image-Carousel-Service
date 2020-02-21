@@ -1,1 +1,0 @@
-//use this file for setting up connection to postgres DB
