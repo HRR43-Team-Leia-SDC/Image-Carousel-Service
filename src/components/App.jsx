@@ -69,6 +69,7 @@ class App extends React.Component {
 
   getImages() {
     const id = document.location.search.slice(1);
+    console.log('id', id, typeof id)
     axios
     .get(`/carousel/${id}`)
     .then(res => {
