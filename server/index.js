@@ -1,3 +1,4 @@
+const rn = require('newrelic');
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 app.get('/carousel/:id', (req, res, next) => {
-  let id = req.params.id;
+  let id = Number(req.params.id);
   Images.getImages(id, (err, result) => {
     if (err) {
       console.log('error get request', err);

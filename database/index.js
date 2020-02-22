@@ -10,7 +10,7 @@ client.connect();
 
 module.exports.getImages = function(id, callback) {
   const query = 'SELECT url from images WHERE id=$1';
-  const value = [id];
+  const value = [parseInt(id)];
   client.query(query, value, (err, res) => {
     if (err) {
       callback(err);
