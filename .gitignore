@@ -5,3 +5,4 @@
 /public
 /database/data.csv
 newrelic.js
+newrelic_agent.log
