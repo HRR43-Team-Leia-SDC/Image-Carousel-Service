@@ -70,7 +70,7 @@ class App extends React.Component {
   getImages() {
     const id = document.location.search.slice(1);
     axios
-    .get(`/carousel/${id}`)
+    .get(`http://3.93.172.223:5000/carousel/${id}`)
     .then(res => {
       let images = res.data.map(item => item.url);
       this.setState({images}, () => {
