@@ -10,4 +10,6 @@ CREATE TABLE images (
   url VARCHAR(200) NOT NULL
 );
 
+COPY images (id, _id, url) FROM '/home/ubuntu/Image-Carousel-Service/database/data.csv' DELIMITER ',';
+
 CREATE INDEX ON images (id);
